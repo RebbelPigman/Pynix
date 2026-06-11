@@ -3,15 +3,20 @@
 pkgs.mkShell {
 
   packages = [
-    (pkgs.python3.withPackages(p: with p; [
+    (pkgs.python314.withPackages(p: with p; [
 
-	  # Core
-	  pandas
+	  # Math
 	  numpy
 	  scipy
+	  sympy
+	  
+	  #Data
+	  pandas # tables
+	  networkx # graphs
 
 	  #DataViz
 	  matplotlib
+	  graphviz
 	  seaborn
 
 	  #NLP
@@ -23,7 +28,6 @@ pkgs.mkShell {
 
 	  # jupyter
 	  jupyterlab
-	  jupyter-themes
 
     ]))
   ];
